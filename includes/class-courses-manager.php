@@ -27,6 +27,9 @@
  * @subpackage Courses_Manager/includes
  * @author     Noodles <noodles@codercave.net>
  */
+
+use CoursesManager\CmCourse;
+
 class Courses_Manager {
 
 	/**
@@ -78,6 +81,8 @@ class Courses_Manager {
 		$this->set_locale();
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
+
+	    add_action('init',array($this,'register_post_types'));
 
 	}
 
@@ -157,6 +162,9 @@ class Courses_Manager {
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
+        //cm-course hooks
+        $this->loader->add_filter('manage_cm-course_posts_columns',CmCourse::class,'get_posts_columns');
+
 	}
 
 	/**
@@ -218,7 +226,7 @@ class Courses_Manager {
     /**
      * register the custom post types for the course manager plugin.
      */
-	private function register_post_types(){
+	public function register_post_types(){
 
 	    register_post_type('cm-course',array(
 	        'label'=>'Courses',
@@ -226,7 +234,7 @@ class Courses_Manager {
             'public'=>true, //the object can be accessed by frontend users
             'show_ui'=>true, //we will show an interface to manage courses in the backend.
             'show_in_menu'=>true, //show it as a top entry
-            'menu_position'=>1 //positon in the admin menu
+            'menu_position'=>6 //positon in the admin menu
         ));
     }
 

@@ -1,0 +1,14 @@
+{
+    "name": "andres/courses-manager",
+    "description": "simple course manager for wordpress",
+    "authors": [
+        {
+            "name": "Andres Mosquera",
+            "email": "noodles@codercave.net"
+        }
+    ],
+    "autoload": {
+        "psr-4": {"CoursesManager\\": "includes/"}
+    },
+    "require": {}
+}
