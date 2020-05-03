@@ -164,6 +164,7 @@ class Courses_Manager {
 
         //cm-course hooks
         $this->loader->add_filter('manage_cm-course_posts_columns',CmCourse::class,'get_posts_columns');
+        $this->loader->add_action('add_meta_boxes',CmCourse::class,'admin_metaboxes',10,2);
 
 	}
 
@@ -234,7 +235,9 @@ class Courses_Manager {
             'public'=>true, //the object can be accessed by frontend users
             'show_ui'=>true, //we will show an interface to manage courses in the backend.
             'show_in_menu'=>true, //show it as a top entry
-            'menu_position'=>6 //positon in the admin menu
+            'menu_position'=>6, //positon in the admin menu,
+            'show_in_rest' => true, //let's show the product type in the rest api,
+            'supports' => array('title','editor','revisions','excerpt','page-attributes','thumbnail', 'custom-fields','cm-sections')
         ));
     }
 
