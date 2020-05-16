@@ -10,7 +10,7 @@ function initCmCourseModal() {
 	$("#cm-tree").fancytree({
 		extensions: ['glyph','edit','wide','table'],
 		glyph:{
-			preset:'material',
+			preset:'awesome4',
 		},
 		edit:{
 			triggerStart:['dblclick']
@@ -41,7 +41,7 @@ function initCmCourseModal() {
 
 			// (Column #1 is rendered by fancytree)
 			if(!node.data.isroot){
-				$tdList.eq(2).html("<button type='button' role='button' class='btn btn-sm btn-danger' onclick='cmDeleteNode(\"#cm-tree\",\""+node.key+"\")' > <i class=\"material-icons\">delete</i></button>");
+				$tdList.eq(2).html("<button type='button' role='button' class='button danger' onclick='cmDeleteNode(\"#cm-tree\",\""+node.key+"\")' > <i class=\"fa fa-trash\">delete</i></button>");
 			}
 
 		}

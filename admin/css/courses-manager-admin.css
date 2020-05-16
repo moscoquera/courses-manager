@@ -2,3 +2,35 @@
  * All of the CSS for your admin-specific functionality should be
  * included in this file.
  */
+
+#modalCmCoursesEntriesContent.main-containter {
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+    grid-column-gap: 20px;
+}
+
+.main-containter .col-7{
+    grid-column: span 7;
+}
+
+.main-containter .col-3{
+    grid-column: span 3;
+}
+
+.main-containter table{
+    width: 100%;
+}
+
+.button.danger{
+    margin-left: 30px;
+    background: #DC3232;
+    color: white;
+    border-color: #DC3232;
+}
+#TB_ajaxContent{
+    height: 100% !important;
+}
+
+#TB_window{
+    overflow-y: scroll;
+}
