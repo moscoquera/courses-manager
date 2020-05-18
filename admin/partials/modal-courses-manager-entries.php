@@ -1,4 +1,4 @@
-<div id="modalCmCoursesEntries">
+<div id="modalCmCoursesEntries" >
     <div class="main-containter" id="modalCmCoursesEntriesContent">
         <div class="col-7">
             <table id="cm-tree" class="table">
@@ -20,6 +20,16 @@
                 <input type="text" class="form-control auto" id="cm_modal_new_module_txt" placeholder="<?php echo _('New module name'); ?>" />
                 <?php echo get_submit_button(__('Add','courses-manager'),'button','cm_modal_new_module_btn',false,array('type'=>'button','role'=>'button','style'=>'float:right'))?>
             </div>
+
+
+            <div class="form-group" style="margin-top: 60px">
+                <label><?php echo _('Entries','courses-manager') ?></label>
+                <select  id="cm_modal_add_entry_select" style="width: 100%" placeholder="<?php echo _('Select a Post'); ?>" >
+
+                </select>
+                <?php echo get_submit_button(__('Add entry','courses-manager'),'button','cm_modal_add_entry_btn',false,array('type'=>'button','role'=>'button','style'=>'float:right'))?>
+            </div>
+
         </div>
     </div>
 </div>

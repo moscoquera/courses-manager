@@ -3,18 +3,24 @@
  * included in this file.
  */
 
+#modalCmCoursesEntries {
+    display: none;
+}
+
 #modalCmCoursesEntriesContent.main-containter {
     display: grid;
     grid-template-columns: repeat(10,1fr);
     grid-column-gap: 20px;
+    padding: 2rem;
 }
 
 .main-containter .col-7{
-    grid-column: span 7;
+    grid-column: span 6;
+    min-height: 400px;
 }
 
 .main-containter .col-3{
-    grid-column: span 3;
+    grid-column: span 4;
 }
 
 .main-containter table{
@@ -28,9 +34,17 @@
     border-color: #DC3232;
 }
 #TB_ajaxContent{
-    height: 100% !important;
+    height: auto !important;
 }
 
 #TB_window{
-    overflow-y: scroll;
+    overflow-y: auto;
+}
+
+#modalCmCoursesEntriesContent.main-containter input[type="text"]{
+    width: 100%;
+}
+
+.select2-dropdown {
+    z-index: 100051 !important;  /*#TB_window uses 100050*/
 }

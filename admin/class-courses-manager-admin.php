@@ -78,7 +78,7 @@ class Courses_Manager_Admin {
 
 		wp_enqueue_style('font-awesome','//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 		wp_enqueue_style('fancytree','https://cdnjs.cloudflare.com/ajax/libs/jquery.fancytree/2.35.0/skin-awesome/ui.fancytree.min.css');
-
+        wp_enqueue_style('select2','https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css');
         wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/courses-manager-admin.css', array(), $this->version, 'all' );
 
 	}
@@ -103,9 +103,10 @@ class Courses_Manager_Admin {
 		 */
 
         wp_enqueue_script('fancytree', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.fancytree/2.35.0/jquery.fancytree-all-deps.min.js', array( 'jquery' ) );
-        wp_enqueue_style('popper','https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js',array('jquery'));
-        wp_enqueue_script('bootstrap','https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js',array('jquery'));
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/courses-manager-admin.js', array( 'jquery','fancytree' ), $this->version, true );
+        wp_enqueue_script('select2','https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js',array('jquery'));
+        wp_enqueue_script( 'wp-api' );
+
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/courses-manager-admin.js', array( 'jquery','fancytree','select2','wp-api' ), $this->version, true );
 
 	}
 
